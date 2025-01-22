@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artistic Object Detection</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="light-mode">
+  <div id="homePage">
+    <h1 id="welcomeTitle">Welcome to Artistic Object Detection</h1>
+    <p id="userGreeting"></p>
+    <form id="detailsForm">
+      <input type="text" id="name" placeholder="Your Name" required><br>
+      <input type="number" id="age" placeholder="Your Age" required><br>
+      <button type="submit">Proceed to Object Detection</button>
+    </form>
+  </div>
+
+  <div id="overviewPage">
+    <h2>Welcome to the Artistic Object Detection Project</h2>
+    <p>This project allows you to detect objects in real-time using a webcam and machine learning models. The goal is to help visualize AI-driven object detection in a user-friendly way. You can interact with the system and observe how it identifies various objects!</p>
+    <p><b>Created by Nahom, a student who is passionate about AI and machine learning.</b></p>
+    <button id="proceedButton">Proceed to Object Detection</button>
+  </div>
+
+  <div id="objectDetectionPage">
+    <div id="headerControls">
+      <div id="darkModeToggle" class="icon-button">🌞</div>
+      <div id="settingsButton" class="icon-button">⚙️</div>
+    </div>
+    <h1>Object Detection System</h1>
+    <div id="videoWrapper">
+      <video id="video" autoplay playsinline></video>
+      <canvas id="canvas"></canvas>
+    </div>
+    <div id="board">
+      <h3>Detected Objects</h3>
+      <ul id="objectList"></ul>
+    </div>
+    <div id="actionButtons">
+      <button id="startRecording">Start Recording</button>
+      <button id="stopRecording">Stop Recording</button>
+      <button id="clearList">Clear List</button>
+      <button id="backToHome">Back to Home</button>
+    </div>
+  </div>
+
+  <div class="modal" id="settingsModal">
+    <h3>Settings</h3>
+    <p><b>Shortcuts:</b></p>
+    <p><b>D</b>: Toggle Dark Mode<br><b>S</b>: Stop Detection<br><b>C</b>: Clear List</p>
+    <button id="closeModal">Close</button>
+  </div>
+  <div class="overlay" id="overlay"></div>
+</body>
+</html>
