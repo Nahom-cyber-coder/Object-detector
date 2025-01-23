@@ -8,18 +8,27 @@ body {
   overflow: hidden;
   transition: background-color 0.5s, color 0.5s;
 }
+
 body.light-mode {
   background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
   color: #000;
 }
+
 body.dark-mode {
   background: linear-gradient(135deg, #1e1e1e, #121212);
   color: #fff;
 }
+
+body.neon-mode {
+  background: linear-gradient(45deg, #ff00cc, #3333ff);
+  color: #39ff14;
+}
+
 h1, h3 {
   margin: 0;
   text-align: center;
 }
+
 button {
   padding: 10px 20px;
   margin: 10px;
@@ -32,19 +41,23 @@ button {
   transition: background 0.5s, transform 0.2s;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
+
 button:hover {
   background: linear-gradient(135deg, #0056b3, #007bff);
   transform: scale(1.1);
 }
+
 #homePage {
   text-align: center;
   animation: fadeIn 1s ease-in-out;
   position: relative;
 }
+
 #welcomeTitle {
   font-size: 2.5rem;
   animation: pulsate 2s infinite;
 }
+
 #detailsForm input {
   padding: 10px;
   margin: 10px 0;
@@ -55,23 +68,28 @@ button:hover {
   outline: none;
   transition: border-color 0.3s;
 }
+
 #detailsForm input:focus {
   border-color: #007bff;
 }
+
 #overviewPage {
   display: none;
   text-align: center;
   animation: fadeIn 1s ease-in-out;
   position: relative;
 }
+
 #overviewPage h2 {
   font-size: 2rem;
   margin-bottom: 20px;
 }
+
 #overviewPage p {
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
+
 #objectDetectionPage {
   display: none;
   flex-direction: column;
@@ -83,16 +101,19 @@ button:hover {
   overflow-y: auto;
   height: 100vh;
 }
+
 #videoWrapper {
   position: relative;
   display: inline-block;
 }
+
 video {
   border-radius: 15px;
   width: 640px;
   height: 480px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
+
 canvas {
   position: absolute;
   top: 0;
@@ -100,6 +121,7 @@ canvas {
   border-radius: 15px;
   pointer-events: none;
 }
+
 #board {
   margin-top: 20px;
   max-width: 400px;
@@ -111,10 +133,12 @@ canvas {
   overflow-y: scroll;
   transition: transform 0.3s ease;
 }
+
 ul {
   list-style: none;
   padding: 0;
 }
+
 ul li {
   margin: 5px 0;
   padding: 10px;
@@ -125,15 +149,19 @@ ul li {
   font-size: 14px;
   align-items: center;
 }
+
 ul li span {
   margin-left: 10px;
 }
+
 ul li:hover {
   background: rgba(255, 255, 255, 0.3);
 }
+
 ul li span:first-child {
   font-weight: bold;
 }
+
 #headerControls {
   position: fixed;
   top: 10px;
@@ -141,6 +169,7 @@ ul li span:first-child {
   display: flex;
   gap: 10px;
 }
+
 .icon-button {
   width: 40px;
   height: 40px;
@@ -155,10 +184,12 @@ ul li span:first-child {
   transition: transform 0.2s, background 0.5s;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
+
 .icon-button:hover {
   transform: scale(1.1);
   background: linear-gradient(135deg, #0056b3, #007bff);
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -169,6 +200,7 @@ ul li span:first-child {
     transform: translateY(0);
   }
 }
+
 @keyframes pulsate {
   0%, 100% {
     opacity: 1;
@@ -177,6 +209,7 @@ ul li span:first-child {
     opacity: 0.6;
   }
 }
+
 .modal {
   display: none;
   position: fixed;
@@ -191,9 +224,11 @@ ul li span:first-child {
   width: 300px;
   text-align: center;
 }
+
 .modal.active {
   display: block;
 }
+
 .overlay {
   display: none;
   position: fixed;
@@ -204,19 +239,23 @@ ul li span:first-child {
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
+
 .overlay.active {
   display: block;
 }
+
 #backToHome {
   margin-top: 20px;
   background-color: #28a745;
   border-radius: 25px;
 }
+
 #stopRecording, #clearList, #startRecording {
   background-color: #dc3545;
   border-radius: 25px;
   margin-top: 10px;
 }
+
 .popup {
   display: none;
   position: fixed;
@@ -229,6 +268,7 @@ ul li span:first-child {
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
 }
+
 .popup-content {
   background-color: #fefefe;
   margin: 15% auto;
@@ -236,15 +276,42 @@ ul li span:first-child {
   border: 1px solid #888;
   width: 80%;
 }
+
 .close {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* New styles for neon effects */
+.neon {
+  color: #39ff14;
+  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #39ff14, 0 0 80px #39ff14;
+}
+
+.neon-background {
+  background: linear-gradient(45deg, #ff00cc, #3333ff);
+  border: 2px solid #39ff14;
+  box-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #39ff14, 0 0 80px #39ff14;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #555;
 }
