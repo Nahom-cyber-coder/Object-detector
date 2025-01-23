@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const proceedButton = document.getElementById("proceedButton");
   const popupMessage = document.getElementById('popupMessage');
   const closePopup = document.querySelector('.close');
+  const proceedToDetection = document.getElementById('proceedToDetection');
+  const darkModeToggleRealWorld = document.getElementById('darkModeToggleRealWorld');
+  const realWorldPage = document.getElementById('realWorldPage');
   let detectedObjects = {};
   let isCameraSetUp = false;
   let recording = false;
@@ -30,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Transition effect helpers
   function showPage(page) {
-    const allPages = [homePage, overviewPage, objectDetectionPage];
+    const allPages = [homePage, overviewPage, objectDetectionPage, realWorldPage];
     allPages.forEach(p => p.style.display = "none");
     page.style.display = "block";
   }
@@ -43,11 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
     darkModeToggleHome.textContent = mode;
     darkModeToggleOverview.textContent = mode;
     darkModeToggle.textContent = mode;
+    darkModeToggleRealWorld.textContent = mode;
   }
 
   darkModeToggleHome.addEventListener("click", toggleDarkMode);
   darkModeToggleOverview.addEventListener("click", toggleDarkMode);
   darkModeToggle.addEventListener("click", toggleDarkMode);
+  darkModeToggleRealWorld.addEventListener("click", toggleDarkMode);
 
   // Show Settings Modal
   settingsButton.addEventListener("click", () => {
@@ -132,7 +137,11 @@ document.addEventListener('DOMContentLoaded', () => {
     popupMessage.style.display = 'block';
   });
 
-  proceedButton.addEventListener("click", async () => {
+  proceedButton.addEventListener("click", () => {
+    showPage(realWorldPage);
+  });
+
+  proceedToDetection.addEventListener("click", async () => {
     showPage(objectDetectionPage);
     await setupCamera();
     const model = await cocoSsd.load();
@@ -202,4 +211,24 @@ document.addEventListener('DOMContentLoaded', () => {
     objectDetectionPage.style.display = 'none';
     homePage.style.display = 'block';
   });
+
+  // Neon effect on mouse move
+  document.addEventListener('mousemove', (e) => {
+    document.querySelectorAll('.neon').forEach(el => {
+      el.style.color = `rgb(${e.clientX % 255}, ${e.clientY % 255}, 255)`;
+    });
+  });
+
+  // Fix popup message display in dark mode
+  if (document.body.classList.contains('dark-mode')) {
+    popupMessage.style.display = 'block';
+  }
+
+  // Toggle Neon Mode
+  function toggleNeonMode() {
+    document.body.classList.toggle("neon-mode");
+  }
+
+  // Add event listener for neon mode toggle
+  document.getElementById("neonModeToggle").addEventListener("click", toggleNeonMode);
 });
