@@ -10,64 +10,80 @@
   <script src="script.js" defer></script>
 </head>
 <body class="light-mode">
-  <div id="homePage">
+  <div id="homePage" class="neon-background">
     <div class="headerControls">
       <div id="darkModeToggleHome" class="icon-button">🌞</div>
     </div>
-    <h1 id="welcomeTitle">Welcome to Artistic Object Detection</h1>
-    <p id="userGreeting"></p>
+    <h1 id="welcomeTitle" class="neon">Welcome to Artistic Object Detection</h1>
+    <p id="userGreeting" class="neon"></p>
     <form id="detailsForm">
       <input type="text" id="name" placeholder="Your Name" required><br>
       <input type="number" id="age" placeholder="Your Age" required><br>
-      <button type="submit">Proceed to Object Detection</button>
+      <button type="submit" class="neon-background">Proceed to Object Detection</button>
     </form>
   </div>
 
-  <div id="overviewPage" style="display:none;">
+  <div id="overviewPage" class="neon-background" style="display:none;">
     <div class="headerControls">
       <div id="darkModeToggleOverview" class="icon-button">🌞</div>
     </div>
-    <h2>Welcome to the Artistic Object Detection Project</h2>
-    <p>This project allows you to detect objects in real-time using a webcam and machine learning models. The goal is to help visualize AI-driven object detection in a user-friendly way. You can interact with the system and observe how it identifies various objects!</p>
-    <p><b>Created by Nahom, a student who is passionate about AI and machine learning.</b></p>
-    <button id="proceedButton">Proceed to Object Detection</button>
+    <h2 class="neon">Welcome to the Artistic Object Detection Project</h2>
+    <p class="neon">This project allows you to detect objects in real-time using a webcam and machine learning models. The goal is to help visualize AI-driven object detection in a user-friendly way. You can interact with the system and observe how it identifies various objects!</p>
+    <p class="neon"><b>Created by Nahom, a student who is passionate about AI and machine learning.</b></p>
+    <button id="proceedButton" class="neon-background">Proceed to Object Detection</button>
   </div>
 
-  <div id="objectDetectionPage" style="display:none;">
+  <div id="realWorldPage" class="neon-background" style="display:none;">
+    <div class="headerControls">
+      <div id="darkModeToggleRealWorld" class="icon-button">🌞</div>
+    </div>
+    <h2 class="neon">Real-World Applications of Object Detection</h2>
+    <p class="neon">Object detection has numerous real-world applications, including:</p>
+    <ul class="neon">
+      <li>Autonomous vehicles</li>
+      <li>Security and surveillance</li>
+      <li>Healthcare and medical imaging</li>
+      <li>Retail and inventory management</li>
+      <li>Robotics and automation</li>
+    </ul>
+    <button id="proceedToDetection" class="neon-background">Proceed to Object Detection</button>
+  </div>
+
+  <div id="objectDetectionPage" class="neon-background" style="display:none;">
     <div class="headerControls">
       <div id="darkModeToggle" class="icon-button">🌞</div>
       <div id="settingsButton" class="icon-button">⚙️</div>
     </div>
-    <h1>Object Detection System</h1>
+    <h1 class="neon">Object Detection System</h1>
     <div id="videoWrapper">
       <video id="video" autoplay playsinline></video>
       <canvas id="canvas"></canvas>
     </div>
-    <div id="board">
-      <h3>Detected Objects</h3>
-      <ul id="objectList"></ul>
+    <div id="board" class="neon-background">
+      <h3 class="neon">Detected Objects</h3>
+      <ul id="objectList" class="neon"></ul>
     </div>
     <div id="actionButtons">
-      <button id="startRecording">Start Recording</button>
-      <button id="stopRecording">Stop Recording</button>
-      <button id="clearList">Clear List</button>
-      <button id="backToHome">Back to Home</button>
+      <button id="startRecording" class="neon-background">Start Recording</button>
+      <button id="stopRecording" class="neon-background">Stop Recording</button>
+      <button id="clearList" class="neon-background">Clear List</button>
+      <button id="backToHome" class="neon-background">Back to Home</button>
     </div>
   </div>
 
   <div class="modal" id="settingsModal">
-    <h3>Settings</h3>
-    <p><b>Shortcuts:</b></p>
-    <p><b>D</b>: Toggle Dark Mode<br><b>S</b>: Stop Detection<br><b>C</b>: Clear List</p>
-    <button id="closeModal">Close</button>
+    <h3 class="neon">Settings</h3>
+    <p class="neon"><b>Shortcuts:</b></p>
+    <p class="neon"><b>D</b>: Toggle Dark Mode<br><b>S</b>: Stop Detection<br><b>C</b>: Clear List</p>
+    <button id="closeModal" class="neon-background">Close</button>
   </div>
   <div class="overlay" id="overlay"></div>
 
   <div id="popupMessage" class="popup">
-    <div class="popup-content">
+    <div class="popup-content neon-background">
       <span class="close">&times;</span>
-      <p>This project allows you to detect objects in real-time using a webcam and machine learning models. The goal is to help visualize AI-driven object detection in a user-friendly way. You can interact with the system and observe how it identifies various objects!</p>
-      <p><b>Note:</b> This project is not absolute and may show some non-existing materials.</p>
+      <p class="neon">This project allows you to detect objects in real-time using a webcam and machine learning models. The goal is to help visualize AI-driven object detection in a user-friendly way. You can interact with the system and observe how it identifies various objects!</p>
+      <p class="neon"><b>Note:</b> This project is not absolute and may show some non-existing materials.</p>
     </div>
   </div>
 </body>
