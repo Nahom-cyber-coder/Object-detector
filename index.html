@@ -11,6 +11,9 @@
 </head>
 <body class="light-mode">
   <div id="homePage">
+    <div class="headerControls">
+      <div id="darkModeToggleHome" class="icon-button">🌞</div>
+    </div>
     <h1 id="welcomeTitle">Welcome to Artistic Object Detection</h1>
     <p id="userGreeting"></p>
     <form id="detailsForm">
@@ -20,15 +23,18 @@
     </form>
   </div>
 
-  <div id="overviewPage">
+  <div id="overviewPage" style="display:none;">
+    <div class="headerControls">
+      <div id="darkModeToggleOverview" class="icon-button">🌞</div>
+    </div>
     <h2>Welcome to the Artistic Object Detection Project</h2>
     <p>This project allows you to detect objects in real-time using a webcam and machine learning models. The goal is to help visualize AI-driven object detection in a user-friendly way. You can interact with the system and observe how it identifies various objects!</p>
     <p><b>Created by Nahom, a student who is passionate about AI and machine learning.</b></p>
     <button id="proceedButton">Proceed to Object Detection</button>
   </div>
 
-  <div id="objectDetectionPage">
-    <div id="headerControls">
+  <div id="objectDetectionPage" style="display:none;">
+    <div class="headerControls">
       <div id="darkModeToggle" class="icon-button">🌞</div>
       <div id="settingsButton" class="icon-button">⚙️</div>
     </div>
@@ -56,5 +62,13 @@
     <button id="closeModal">Close</button>
   </div>
   <div class="overlay" id="overlay"></div>
+
+  <div id="popupMessage" class="popup">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <p>This project allows you to detect objects in real-time using a webcam and machine learning models. The goal is to help visualize AI-driven object detection in a user-friendly way. You can interact with the system and observe how it identifies various objects!</p>
+      <p><b>Note:</b> This project is not absolute and may show some non-existing materials.</p>
+    </div>
+  </div>
 </body>
 </html>
