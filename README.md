@@ -30,5 +30,5 @@ Use Cases:
 - Web Applications: Add object detection features to web-based tools, games, or AR experiences.
 - Robotics: Enable robots to detect and interact with objects in real-time.
 
-For more details, please refer to the full documentation or check the example scripts to get started with the object detection system.
+
 
